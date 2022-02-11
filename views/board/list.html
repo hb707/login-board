@@ -1,0 +1,24 @@
+{% extends "../_layout.html" %}
+{% block content %}
+<h2>게시판 리스트</h2>
+<table>
+    <tr>
+        <td>글번호</td>
+        <td>글제목</td>
+        <td>작성자</td>
+        <td>작성일</td>
+        <td>조회수</td>
+    </tr>
+    {% for item in boardData %}
+    <tr>
+        <td>{{loop.index}}</td>
+        <td><a href="/board/view?index={{loop.index}}">{{item.subject}}</a></td>
+        <td>{{item.username}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.viewCount}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+<a href="/board/write">글쓰기</a>
+{% endblock %}

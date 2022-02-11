@@ -1,0 +1,19 @@
+{% extends "../_layout.html" %}
+{% block content %}
+<h2>글 수정</h2>
+<form method="post" action="/board/update">
+    <ul>
+        <li>
+            제목 : <input type="text" name="subject" value="{{content.subject}}">
+        </li>
+        <li>
+            작성자 : {{loginUsername}} <input type="hidden" name="username" value="{{loginUsername}}">
+        </li>
+        <li>
+            작성일 : <input type="text" name="date" value="{{content.date}}">
+        </li>
+        <input type="hidden" name="viewCount" value={{content.viewcount}}>
+    </ul>
+    <input type="submit" value="글쓰기">
+</form>
+{% endblock %}

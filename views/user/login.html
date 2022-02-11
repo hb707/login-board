@@ -1,0 +1,18 @@
+{% extends "../_layout.html" %}
+{% block content %}
+<h2>로그인</h2>
+<form method="post"action="/user/login">
+    <ul>
+        <li>
+            아이디 : <input type="text" name="userid">
+        </li>
+        <li>
+            패스워드 : <input type="text" name="userpw">
+        </li>
+        <li>
+            <input type="submit" value="로그인">
+        </li>
+    </ul>
+</form>
+{% endblock %}
+

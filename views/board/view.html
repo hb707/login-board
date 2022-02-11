@@ -1,0 +1,26 @@
+{% extends "../_layout.html" %}
+{% block content %}
+<h2>글 보기</h2>
+<h4>{{boardContent.subject}}</h4>
+<ul>
+    <li>
+        작성자 : {{boardContent.username}}
+    </li>
+    <li>
+        작성일 : {{boardContent.date}}
+    </li>
+    <li>
+        조회수 : {{boardContent.viewCount}}
+    </li>
+</ul>
+<div style="border: 1px solid black">
+    <p>글 내용 입니다.</p>
+</div>
+<ul>
+    <a href="/board/list">목록가기</a>
+    {% if userMatch %}
+    <a href="/board/delete?index={{pageIndex}}">삭제하기</a>
+    <a href="/board/update?index={{pageIndex}}">수정하기</a>
+    {% endif %}
+</ul>
+{% endblock %}

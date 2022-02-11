@@ -1,0 +1,19 @@
+{% extends "../_layout.html" %}
+{% block content %}
+<h2>글작성</h2>
+<form method="post" action="/board/write">
+    <ul>
+        <li>
+            제목 : <input type="text" name="subject">
+        </li>
+        <li>
+            작성자 : {{loginUsername}} <input type="hidden" name="username" value="{{loginUsername}}">
+        </li>
+        <li>
+            작성일 : <input type="text" name="date">
+        </li>
+        <input type="hidden" name="viewCount" value=0>
+    </ul>
+    <input type="submit" value="글쓰기">
+</form>
+{% endblock %}
